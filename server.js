@@ -7,7 +7,8 @@ var bGround = require('fcc-express-bground');
 var myApp = require('./myApp');
 var express = require('express');
 var app = express();
-
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
     var allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
